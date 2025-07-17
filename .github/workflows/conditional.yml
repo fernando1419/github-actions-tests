@@ -1,0 +1,14 @@
+name: Conditional Workflow
+
+on:
+  push:
+    branches: [main, develop, feature/*]
+  workflow_dispatch: # this allows to run workflow manually on github
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detect branch
+        run: |
+          echo "Actual branch: ${{ github.ref_name }}"
