@@ -1,0 +1,29 @@
+name: My first Workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sayHi: # this is the name of the job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the original code # step1 para cumplir el job sayHi
+        uses: actions/checkout@v4
+
+      - name: 👋 Hola mundo devops! # step2
+        run: |
+          echo "Hola mundo devops con Roxs"
+          date
+          uname -a
+
+      - name: 🧪 Test Matemático
+        run: |
+          if [ $(2+2) -eq 4 ]; then
+          echo "✅ Todo OK"
+          else
+          echo "❌ Algo falló"
+          exit 1
+          fi
