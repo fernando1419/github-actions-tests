@@ -21,7 +21,7 @@ jobs:
 
       - name: 🧪 Test Matemático
         run: |
-          if [ $(2+2) -eq 4 ]; then
+          if [ $((2+2)) -eq 4 ]; then
           echo "✅ Todo OK"
           else
           echo "❌ Algo falló"
