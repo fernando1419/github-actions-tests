@@ -8,7 +8,10 @@ on:
 jobs:
   detect:
     runs-on: ubuntu-latest
+    env:
+      VARIABLE: "Example variable value"
     steps:
       - name: Detect branch
         run: |
+          echo "VARIABLE is $VARIABLE"
           echo "Actual branch: ${{ github.ref_name }}"
