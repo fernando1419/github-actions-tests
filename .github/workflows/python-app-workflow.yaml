@@ -28,7 +28,7 @@ jobs:
       - name: Run tests
         working-directory: python-app
         run: |
-          pytest tests -v
+          PYTHONPATH=. pytest tests -v
 
       - name: Run coverage tests
         continue-on-error: true
