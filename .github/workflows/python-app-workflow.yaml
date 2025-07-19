@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
         working-directory: python-app
         run: |
-          pytest --cov=. --cov-report=term --cov-report=html
+          PYTHONPATH=. pytest --cov=. --cov-report=term --cov-report=html
 
       - name: Save report
         uses: actions/upload-artifact@v4
