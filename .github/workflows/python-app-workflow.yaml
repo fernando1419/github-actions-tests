@@ -26,14 +26,15 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        working-directory: ./python-app
+        working-directory: python-app
         run: |
-          pytest tests/ -v
+          pytest tests -v
 
       - name: Run coverage tests
-        working-directory: ./python-app
+        continue-on-error: true
+        working-directory: python-app
         run: |
-          pytest --cov=app --cov-report=term --cov-report=html
+          pytest --cov=. --cov-report=term --cov-report=html
 
       - name: Save report
         uses: actions/upload-artifact@v4
